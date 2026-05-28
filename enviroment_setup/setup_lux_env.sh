@@ -101,8 +101,9 @@ import torch, numpy, kaggle_environments, luxai_s3
 print(f'  PyTorch     : {torch.__version__}')
 print(f'  NumPy       : {numpy.__version__}')
 print(f'  Kaggle Envs : {kaggle_environments.__version__}')
-print(f'  LuxAI S3    : {luxai_s3.__version__}')
 "
+LUXAI_VERSION=$(pip show luxai-s3 2>/dev/null | grep Version | awk '{print $2}')
+echo "  LuxAI S3    : ${LUXAI_VERSION:-not found}"
 
 # ------------------------------------------------------------
 # 8. Print activation reminder
